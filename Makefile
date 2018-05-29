@@ -2,9 +2,10 @@
 # output path
 BIN = ./bin
 
+CFLAG = DEBUG
 # debug stuff 
 ifeq ($(CFLAG), DEBUG)
-CFLAGS += -g
+CFLAGS += -g3
 endif
 
 AR  = ar -cqs
@@ -34,7 +35,7 @@ $(BIN)/libconhash.a : $(OBJ)
 	
 # build sample
 $(BIN)/sample : $(SAMPLE_OBJS)
-	gcc -O -o $@ $(SAMPLE_OBJS) -L. -L./bin -lconhash
+	gcc -o $@ $(SAMPLE_OBJS) -L. -L./bin -lconhash
 
 	
 $(BIN)/%.o : %.c
