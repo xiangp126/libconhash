@@ -35,12 +35,13 @@ int main()
         printf("the hashing results--------------------------------------:\n");
 
         /* try object */
-        for(i = 0; i < 20; i++)
+        for(i = 0; i < 5; i++)
         {
             sprintf(str, "James.km%03d", i);
             node = conhash_lookup(conhash, str);
             if(node) printf("[%16s] is in node: [%16s]\n", str, node->iden);
         }
+
         conhash_get_vnodes(conhash, hashes, sizeof(hashes)/sizeof(hashes[0]));
         conhash_del_node(conhash, &g_nodes[2]);
         printf("remove node[%s], virtual nodes number %d\n", g_nodes[2].iden, conhash_get_vnodes_num(conhash));

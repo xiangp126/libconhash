@@ -7,6 +7,7 @@
 #include "configure.h"
 #include <stdlib.h>
 
+#define DEBUG 1
 typedef struct util_rbtree_s util_rbtree_t;
 typedef struct util_rbtree_node_s util_rbtree_node_t;
 

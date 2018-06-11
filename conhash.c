@@ -100,6 +100,9 @@ const struct node_s* conhash_lookup(const struct conhash_s *conhash, const char 
     }
     /* calc hash value */
     hash = conhash->cb_hashfunc(object);
+#if DEBUG
+    printf("Hash Value = %lu\n", hash);
+#endif
     
     rbnode = util_rbtree_lookup(&(conhash->vnode_tree), hash);
     if(rbnode != NULL)
